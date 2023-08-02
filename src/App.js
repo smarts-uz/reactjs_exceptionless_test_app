@@ -1,25 +1,20 @@
+/* eslint-disable no-unused-vars */
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import { useContext } from 'react';
+import { Provider, Context } from "./store";
+
+const App = () => {
+  const { state } = useContext(Context);
+  const { client } = state;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Provider>
+      <>
+      Your App.js code or components
+      </>
+    </Provider>
+  )
+} 
 
 export default App;
